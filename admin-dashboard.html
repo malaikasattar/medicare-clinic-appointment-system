@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — MediCare</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="adminPanel()">
+<header>
+  <div class="logo">MediCare</div>
+  <nav id="navLinks"></nav>
+</header>
+<div class="container">
+  <h2>Admin Dashboard</h2>
+  <div id="stats" class="grid"></div>
+
+  <h2>Add New Doctor</h2>
+  <form onsubmit="addDoctor(event)">
+    <label>Doctor Name</label>
+    <input type="text" id="dname" placeholder="Dr. Name" required>
+    <label>Specialization</label>
+    <select id="dspec"><option value="">All Specializations</option><option>Cardiologist</option><option>Neurologist</option><option>Nephrologist</option><option>Orthopedic</option><option>Ophthalmologist</option><option>Dentist</option><option>General Physician</option><option>Pediatrician</option><option>Dermatologist</option><option>Gynecologist</option><option>ENT Specialist</option><option>Psychiatrist</option><option>Gastroenterologist</option><option>Urologist</option></select>
+    <label>Fee (Rs)</label>
+    <input type="number" id="dfee" placeholder="1500" required>
+    <label>Timing</label>
+    <input type="text" id="dtiming" placeholder="Mon-Sat 10:00 AM - 2:00 PM" required>
+    <label>Qualification</label>
+    <input type="text" id="dqual" placeholder="MBBS, FCPS">
+    <label>Doctor Email (login)</label>
+    <input type="email" id="demail" placeholder="doctor@medicare.com" required>
+    <button class="btn" type="submit">Add Doctor</button>
+  </form>
+
+  <h2>Add New Patient</h2>
+  <form onsubmit="addPatient(event)">
+    <label>Patient Name</label>
+    <input type="text" id="pname" placeholder="Patient name" required>
+    <label>Patient Email (login)</label>
+    <input type="email" id="pemail" placeholder="patient@email.com" required>
+    <label>Password</label>
+    <input type="text" id="ppassword" placeholder="1234" required>
+    <label>Phone</label>
+    <input type="tel" id="pphone" placeholder="03xxxxxxxxx" maxlength="11" oninput="this.value=this.value.replace(/\D/g,'')">
+    <button class="btn" type="submit">Add Patient</button>
+  </form>
+
+  <h2>All Patients</h2>
+  <div id="patientList" class="grid"></div>
+
+  <h2>All Doctors</h2>
+  <div id="adminDoctorList" class="grid"></div>
+
+  <h2>All Appointments Report</h2>
+  <div id="apptList" class="grid"></div>
+</div>
+<footer>MediCare — Clinic Appointment System</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
