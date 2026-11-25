@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediCare — Clinic Appointment System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="loadDoctors()">
+<header>
+  <div class="logo">MediCare</div>
+  <nav id="navLinks"></nav>
+</header>
+<section class="hero">
+  <h1>Book Your Doctor Appointment Online</h1>
+  <p>No long waiting. No paper register. Search a doctor and book your time.</p>
+</section>
+<div class="container">
+  <h2>Our Doctors</h2>
+  <div class="searchbar">
+    <input type="text" id="search" placeholder="Search doctor by name..." oninput="loadDoctors()">
+    <select id="specFilter" onchange="loadDoctors()"><option value="">All Specializations</option><option>Cardiologist</option><option>Neurologist</option><option>Nephrologist</option><option>Orthopedic</option><option>Ophthalmologist</option><option>Dentist</option><option>General Physician</option><option>Pediatrician</option><option>Dermatologist</option><option>Gynecologist</option><option>ENT Specialist</option><option>Psychiatrist</option><option>Gastroenterologist</option><option>Urologist</option></select>
+  </div>
+  <div id="doctorList" class="grid"></div>
+</div>
+<footer>MediCare — Clinic Appointment System</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
