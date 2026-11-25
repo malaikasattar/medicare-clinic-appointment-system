@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Appointment — MediCare</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="fillDoctorSelect()">
+<header>
+  <div class="logo">MediCare</div>
+  <nav id="navLinks"></nav>
+</header>
+<div class="container">
+  <form onsubmit="book(event)">
+    <h2>Book Appointment</h2>
+    <label>Doctor</label>
+    <select id="doctor" required onchange="fillSlots()"></select>
+    <label>Date</label>
+    <input type="date" id="date" required onchange="fillSlots()">
+    <label>Time — fixed slots only (within doctor's timing)</label>
+    <select id="time" required></select>
+    <label>Reason</label>
+    <textarea id="reason" placeholder="Why do you want to see the doctor?"></textarea>
+    <button class="btn" type="submit">Book Appointment</button>
+    <p><small>The same doctor, date and time cannot be booked twice.</small></p>
+  </form>
+</div>
+<footer>MediCare — Clinic Appointment System</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
